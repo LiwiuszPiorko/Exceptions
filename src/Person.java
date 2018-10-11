@@ -71,14 +71,14 @@ public class Person {
                 "";
     }
 
-    public int incorrect(int age) {
+    public int incorrect(int age)throws IncorrectAgeException {
         if (age < 1)
             throw new IncorrectAgeException();
         else
             return age;
     }
 
-    public String incorrectfirstName(String firstName) {
+    public String incorrectfirstName(String firstName)throws NameUndefinedException {
         int długość = firstName.length();
         if (firstName == null || długość < 2)
             throw new NameUndefinedException();
@@ -86,7 +86,7 @@ public class Person {
             return firstName;
 
     }
-    public String incorrectlasttName(String lastName){
+    public String incorrectlastName(String lastName)throws NameUndefinedException{
         int długość2 = lastName.length();
         if (lastName == null || długość2 < 2)
             throw new NameUndefinedException();

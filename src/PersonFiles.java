@@ -23,7 +23,7 @@ public class PersonFiles {
             System.err.println("Błąd w rubryce: imię");
         }
         try {
-            person1.incorrectfirstName(lastName);
+            person1.incorrectlastName(lastName);
         }catch (NameUndefinedException e){
             System.err.println("Błąd w rubryce: nazwisko");
         }
