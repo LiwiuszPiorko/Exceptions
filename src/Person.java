@@ -6,12 +6,28 @@ public class Person {
     int age;
     int pesel;
 
-    public Person(String firstName, String lastName, int age, int pesel) {
+    public Person(String firstName, String lastName, int age, int pesel) throws NameUndefinedException, IncorrectAgeException {
+        if (age < 1) {
+            throw new IncorrectAgeException();
+        }
+        int długość = firstName.length();
+        if (firstName == null || długość < 2) {
+            throw new NameUndefinedException(" Imię");
+        }
+
+        int długość2 = lastName.length();
+        if (lastName == null || długość2 < 2) {
+            throw new NameUndefinedException(" Nazwisko");
+        }
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.pesel = pesel;
+
+
     }
+
 
     public String getFirstName() {
         return firstName;
@@ -71,26 +87,9 @@ public class Person {
                 "";
     }
 
-    public int incorrect(int age)throws IncorrectAgeException {
-        if (age < 1)
-            throw new IncorrectAgeException();
-        else
-            return age;
-    }
 
-    public String incorrectfirstName(String firstName)throws NameUndefinedException {
-        int długość = firstName.length();
-        if (firstName == null || długość < 2)
-            throw new NameUndefinedException();
-        else
-            return firstName;
-
-    }
-    public String incorrectlastName(String lastName)throws NameUndefinedException{
-        int długość2 = lastName.length();
-        if (lastName == null || długość2 < 2)
-            throw new NameUndefinedException();
-        else
-            return lastName;
-    }
 }
+
+
+
+
